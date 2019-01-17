@@ -3,7 +3,7 @@
 import json
 from flask import Flask, session, redirect, request
 from .blueprints import register
-# from .constants import constants
+from .constants import constants
 # from .templates import load_css, load_js
 
 app = Flask(
@@ -16,7 +16,7 @@ app = Flask(
 register(app)
 #configuración de session
 app.config['SESSION_TYPE'] = 'filesystem'
-# app.secret_key = constants['key']
+app.secret_key = constants['key']
 # configur de filters/helpers en los templates
 """
 @app.context_processor
