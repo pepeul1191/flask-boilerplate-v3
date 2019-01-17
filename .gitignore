@@ -1,0 +1,7 @@
+*.pyc
+bower_components
+dist
+node_modules
+package-lock.json
+.DS_Store
+Gemfile.lock
