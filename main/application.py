@@ -18,15 +18,18 @@ register(app)
 app.config['SESSION_TYPE'] = 'filesystem'
 # app.secret_key = constants['key']
 # configur de filters/helpers en los templates
+"""
 @app.context_processor
 def utility_processor():
   # return dict(load_css = load_css, load_js = load_js)
-  pass
+  return
+"""
 # una ruta de prueba
 @app.route('/hello')
 def hello_world():
   return 'Hello, World???!'
 # una ruta de errorhandler
+"""
 @app.errorhandler(404)
 def not_found(e):
   if request.method == 'GET':
@@ -44,6 +47,7 @@ def not_found(e):
       ],
     }
     return json.dumps(error), 404
+"""
 #setear cabeceras
 @app.after_request
 def apply_caching(response):

@@ -9,14 +9,5 @@ from flask import Blueprint, render_template, request, session, redirect
 demo_view = Blueprint('demo_view', __name__)
 
 @demo_view.route('/demo', methods=['GET'])
-#@session_false
 def index():
-  locals = {
-    'title': 'Bienvenido',
-    'message': '',
-    #'constants': constants,
-    #'csss': index_css(),
-    #'jss': index_js(),
-  }
-  #return render_template('demo/index.html', locals = locals)
-  return 'XD'
+  return render_template('demo/index.html')
