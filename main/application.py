@@ -4,7 +4,7 @@ import json
 from flask import Flask, session, redirect, request
 from .blueprints import register
 from .constants import constants
-# from .templates import load_css, load_js
+from .templates import load_css, load_js
 
 app = Flask(
   __name__,
@@ -18,12 +18,9 @@ register(app)
 app.config['SESSION_TYPE'] = 'filesystem'
 app.secret_key = constants['key']
 # configur de filters/helpers en los templates
-"""
 @app.context_processor
 def utility_processor():
-  # return dict(load_css = load_css, load_js = load_js)
-  return
-"""
+  return dict(load_css = load_css, load_js = load_js)
 # una ruta de prueba
 @app.route('/hello')
 def hello_world():

@@ -1,13 +1,18 @@
 <html>
 <head>
-	<title>{{locals['title']}}</title>
+	<title>{{ locals['title'] }}</title>
   <meta charset="UTF-8">
   <link rel="shortcut icon" href="{{locals['constants']['static_url']}}favicon.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    {% block css %}{% endblock %}
+    {% block js_top %}{% endblock %}
+  {{ load_css(locals['csss'])|safe }}
 </head>
 <body>
 	{% block content %}{% endblock %}
+  {% block js_bottom %}{% endblock %}
+  {{ load_js(locals['jss'])|safe }}
 </body>
 </html>
