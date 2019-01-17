@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import json
 from flask import Flask, session, redirect, request
-# from .blueprints import register
+from .blueprints import register
 # from .constants import constants
 # from .templates import load_css, load_js
 
@@ -12,15 +12,16 @@ app = Flask(
   static_folder='../static',
   static_url_path='/static'
 )
-#registrar blueprints
-# register(app)
+# blueprints
+register(app)
 #configuración de session
 app.config['SESSION_TYPE'] = 'filesystem'
 # app.secret_key = constants['key']
-#configur de filters/helpers en los templates
+# configur de filters/helpers en los templates
 @app.context_processor
 def utility_processor():
-  return dict(load_css = load_css, load_js = load_js)
+  # return dict(load_css = load_css, load_js = load_js)
+  pass
 # una ruta de prueba
 @app.route('/hello')
 def hello_world():
