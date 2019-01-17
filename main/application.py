@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 import json
 from flask import Flask, session, redirect, request
 from .blueprints import register
@@ -20,7 +21,10 @@ app.secret_key = constants['key']
 # configur de filters/helpers en los templates
 @app.context_processor
 def utility_processor():
-  return dict(load_css = load_css, load_js = load_js)
+  return dict(
+    load_css = load_css,
+    load_js = load_js
+  )
 # una ruta de prueba
 @app.route('/hello')
 def hello_world():

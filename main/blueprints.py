@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 from demo.blueprints import blueprints as demo_blueprints
 
 def register(app):
