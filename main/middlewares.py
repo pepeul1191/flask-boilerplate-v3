@@ -3,14 +3,15 @@
 import json
 from functools import wraps
 from flask import session, redirect, request
-from .constants import constants
+from .CONSTANTS import CONSTANTS
+
 
 def headers(fn):
-  @wraps(fn)
-  def _headers(*args, **kwargs):
-    #response.headers['Server'] = 'Ubuntu;WSGIServer/0.2;CPython/3.5.2'
-    return fn(*args, **kwargs)
-  return _headers
+    @wraps(fn)
+    def _headers(*args, **kwargs):
+        # response.headers['Server'] = 'Ubuntu;WSGIServer/0.2;CPython/3.5.2'
+        return fn(*args, **kwargs)
+    return _headers
 
 def enable_cors(fn):
   @wraps(fn)
@@ -30,11 +31,11 @@ def check_csrf(fn):
   @wraps(fn)
   def _check_csrf(*args, **kwargs):
     #si csrf en el header NO coincide
-    if constants['ambiente_csrf'] == 'activo':
+    if CONSTANTS['ambiente_csrf'] == 'activo':
       continuar = True
       mensaje = []
-      if request.headers.get(constants['csrf']['key']) != None:
-        if request.headers.get(constants['csrf']['key']) != constants['csrf']['secret']:
+      if request.headers.get(CONSTANTS['csrf']['key']) != None:
+        if request.headers.get(CONSTANTS['csrf']['key']) != CONSTANTS['csrf']['secret']:
           continuar = False
           mensaje = [
             'No se puede acceder al recurso',
@@ -62,7 +63,7 @@ def session_false(fn):
   @wraps(fn)
   def _session_false(*args, **kwargs):
     #si la session es activaa, vamos a '/accesos/'
-    if constants['ambiente_session'] == 'activo':
+    if CONSTANTS['ambiente_session'] == 'activo':
       if session.get('estado') != None:
         if session.get('estado') == 'activo':
           return redirect('/')
@@ -76,7 +77,7 @@ def session_true(fn):
   @wraps(fn)
   def _session_true(*args, **kwargs):
     #si la session es activaa, vamos a '/accesos/'
-    if constants['ambiente_session'] == 'activo':
+    if CONSTANTS['ambiente_session'] == 'activo':
       if session.get('estado') != None:
         if session.get('estado') != 'activo':
           return redirect('/error/access/505')
@@ -86,7 +87,7 @@ def session_true(fn):
   return _session_true
 
 def session_language(app_session):
-  rpta = constants['default_language']
+  rpta = CONSTANTS['default_language']
   if 'lang' in app_session:
     rpta = app_session['lang']
   return rpta

@@ -10,7 +10,7 @@ Requisitos de software previamente instalado:
 En caso de usar el servicio en python:
 
     $ sudo pip install virtualenv
-    $ virtualenv -p python3.6 <<nombre_ambiente>>
+    $ virtualenv -p python3 <<nombre_ambiente>>
     $ cd <<nombre_ambiente>>
     $ source bin/activate
 
@@ -31,7 +31,7 @@ Arrancer aplicación con servidor GreenUnicorn:
 
 ### PyLint
 
-    $ pylint <archivo>.py
+    $ pylint <archivo>.py --reports=yes
 
 ---
 
