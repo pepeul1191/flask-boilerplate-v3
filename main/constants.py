@@ -15,6 +15,7 @@ constants = {
   'ambiente_500' : 'activo',
   'ambiente_error_handler' : 'inactivo',
   'key' : 'Fdp6CVxpri1ga8kH',
+  'default_language': 'sp',
 }
 
 services = {
