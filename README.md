@@ -10,7 +10,7 @@ Requisitos de software previamente instalado:
 En caso de usar el servicio en python:
 
     $ sudo pip install virtualenv
-    $ virtualenv -p python3 <<nombre_ambiente>>
+    $ virtualenv -p python3.6 <<nombre_ambiente>>
     $ cd <<nombre_ambiente>>
     $ source bin/activate
 
@@ -29,8 +29,13 @@ Arrancer aplicación con servidor GreenUnicorn:
     # Con logs y reload
     $ gunicorn app:app -w 6 -b 0.0.0.0:3000 --reload --access-logfile -
 
+### PyLint
+
+    $ pylint <archivo>.py
+
 ---
 
 Fuentes:
 
 + https://github.com/pepeul1191/flask-boilerplate-v2
++ https://www.pylint.org/#install
