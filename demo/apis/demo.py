@@ -17,6 +17,16 @@ def index():
         rpta = {
             'mensaje': '=)'
         }
+    except TypeError as e:
+        rpta = {
+            'tipo_mensaje': 'error',
+            'mensaje': [
+                'Se ha producido un error TypeError en listar los '
+                + 'departamentos',
+                str(e)
+            ],
+        }
+        status = 500
     except Exception as e:
         rpta = {
             'tipo_mensaje': 'error',

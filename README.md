@@ -32,6 +32,7 @@ Arrancer aplicación con servidor GreenUnicorn:
 ### PyLint
 
     $ pylint <archivo>.py --reports=yes
+    $ pylint **/*.py --reports=yes
 
 ---
 

@@ -200,7 +200,10 @@ variable-name-hint=[a-z_][a-z0-9_]{2,30}$
 const-rgx=(([A-Z_][A-Z0-9_]*)|(__.*__))$
 
 # Naming hint for constant names
-const-name-hint=(([A-Z_][A-Z0-9_]*)|(__.*__))$
+const-name-hint=(([A-Z_][A-Z0-9_]*)|(__.*__
+
+# Naming style matching correct constant names.
+const-naming-style=UPPER_CASE
 
 # Regular expression matching correct attribute names
 attr-rgx=[a-z_][a-z0-9_]{2,}$
@@ -370,4 +373,4 @@ int-import-graph=
 
 # Exceptions that will emit a warning when being caught. Defaults to
 # "Exception"
-overgeneral-exceptions=Exception
+overgeneral-exceptions=None
