@@ -4,11 +4,11 @@
 from demo.blueprints import blueprints as demo_blueprints
 
 
-def register(APP):
+def register(app):
     modules_blueprints = []
     # registrar blueprint of apps
     modules_blueprints.append(demo_blueprints)
     # cargar blueprints a app
     for blueprints in modules_blueprints:
         for blueprint in blueprints:
-            APP.register_blueprint(blueprint)
+            app.register_blueprint(blueprint)

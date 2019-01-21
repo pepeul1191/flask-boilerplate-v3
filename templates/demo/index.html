@@ -3,12 +3,12 @@
 <div class="login-page">
   <div class="form">
     <i class="fa fa-map-marker" aria-hidden="true" id="logo-brand"></i>
-    <form class="login-form" action="{{locals['constants']['base_url']}}login/acceder" method="post">
+    <form class="login-form" action="{{ locals['constants']['base_url'] }}login/acceder" method="post">
       <input type="text" placeholder="usuario" name="usuario"/>
       <input type="password" placeholder="contrasenia" name="contrasenia"/>
-      <input type="hidden" name="{{locals['constants']['csrf']['key']}}" value="{{locals['constants']['csrf']['secret']}}">
+      <input type="hidden" name="{{ locals['constants']['csrf']['key'] }}" value="{{ locals['constants']['csrf']['secret']}}">
       <button type="submit">login</button>
-      <p class="mensaje-error">{{locals['mensaje']}}</p>
+      <p class="mensaje-error">{{ locals['mensaje'] }}</p>
       <p class="message">No está registrado? <a href="#" onclick="crearCuenta()">Crear cuenta</a></p>
     </form>
   </div>

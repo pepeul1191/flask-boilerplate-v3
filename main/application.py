@@ -4,7 +4,7 @@
 import json
 from flask import Flask, redirect, request
 from .blueprints import register
-from .constants import constants
+from .constants import CONSTANTS
 from .templates import load_css, load_js
 
 
@@ -18,7 +18,7 @@ APP = Flask(
 register(APP)
 # configuración de session
 APP.config['SESSION_TYPE'] = 'filesystem'
-APP.secret_key = constants['key']
+APP.secret_key = CONSTANTS['key']
 
 
 # configur de filters/helpers en los templates

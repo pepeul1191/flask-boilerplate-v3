@@ -5,6 +5,6 @@ from .views import demo_view
 from .apis.demo import demo_api
 
 blueprints = [
-  demo_view,
-  demo_api,
+    demo_view,
+    demo_api,
 ]
