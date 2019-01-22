@@ -5,10 +5,10 @@ import json
 from flask import Blueprint
 
 
-demo_api = Blueprint('demo_api', __name__)
+api = Blueprint('demo_api', __name__)
 
 
-@demo_api.route('/demo/api', methods=['GET'])
+@api.route('/demo/api', methods=['GET'])
 # @session_false
 def index():
     rpta = None

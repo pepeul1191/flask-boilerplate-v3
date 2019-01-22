@@ -7,10 +7,10 @@ from main.constants import CONSTANTS
 from .contents.titles import titles
 from .helpers import index_css, index_js
 
-demo_view = Blueprint('demo_view', __name__)
+view = Blueprint('demo_view', __name__)
 
 
-@demo_view.route('/demo', methods=['GET'])
+@view.route('/demo', methods=['GET'])
 @session_false
 def index():
     lang = session_language(session)

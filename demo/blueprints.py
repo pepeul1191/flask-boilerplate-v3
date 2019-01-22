@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from .views import demo_view
-from .apis.demo import demo_api
+from .views import view as demo_view
+from .apis.demo import api as demo_api
 
 blueprints = [
     demo_view,
