@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from demo.blueprints import blueprints as demo_blueprints
+from .error import view as error_view
 
 
 def register(app):
@@ -12,3 +13,5 @@ def register(app):
     for blueprints in modules_blueprints:
         for blueprint in blueprints:
             app.register_blueprint(blueprint)
+    # registar error/access/:code
+    app.register_blueprint(error_view)
