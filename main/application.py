@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import json
-from flask import Flask, redirect, request
+from flask import Flask
 from .middlewares import not_found
 from .blueprints import register
 from .constants import CONSTANTS

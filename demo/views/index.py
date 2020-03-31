@@ -5,7 +5,6 @@ from flask import Blueprint, render_template, session
 from main.middlewares import session_false, session_language
 from main.constants import CONSTANTS
 from main.contents import get_yaml
-from demo.contents.titles import titles
 from demo.helpers import index_css, index_js
 
 view = Blueprint('demo_view', __name__)
