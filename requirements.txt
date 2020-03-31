@@ -2,3 +2,5 @@ flask
 Jinja2
 gunicorn
 pylint
+requests
+pyyaml

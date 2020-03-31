@@ -4,7 +4,7 @@
 
 CONSTANTS = {
     'base_url': 'http://localhost:3000/',
-    'static_url': 'http://localhost:3000/static/',
+    'static_url': 'http://localhost:3000/',
     'sistema_id': '3',
     'csrf': {
         'key': 'csrftoken',
