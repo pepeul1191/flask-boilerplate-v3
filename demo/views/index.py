@@ -4,8 +4,8 @@
 from flask import Blueprint, render_template, session
 from main.middlewares import session_false, session_language
 from main.constants import CONSTANTS
-from .contents.titles import titles
-from .helpers import index_css, index_js
+from demo.contents.titles import titles
+from demo.helpers import index_css, index_js
 
 view = Blueprint('demo_view', __name__)
 
@@ -21,4 +21,7 @@ def index():
         'csss': index_css(),
         'jss': index_js(),
     }
-    return render_template('demo/index.html', locals=locals_dic)
+    return render_template(
+      'demo/index.html', 
+      locals=locals_dic
+    )
