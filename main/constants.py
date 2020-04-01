@@ -19,6 +19,14 @@ CONSTANTS = {
     'default_language': 'sp',
 }
 
+OAUTH = {
+    'google': {
+        'client_id': '1044701093820-jam7g5carn4nghkkhqr75ustq0l5vrum.apps.googleusercontent.com',
+        'client_secret': '_gRRhQeMc6HKcCWum1hprRhy',
+        'url': 'https://oauth2.googleapis.com/token',
+    },
+}
+
 SERVICES = {
     'accesos': {
         'url': 'http://localhost:4000/',
