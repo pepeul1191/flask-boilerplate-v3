@@ -26,5 +26,6 @@ def index():
     }
     return render_template(
       'demo/index.html', 
-      locals=locals_dic
+      locals=locals_dic,
+      session=session,
     )

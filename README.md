@@ -25,14 +25,31 @@ Arrancer aplicación con servidor GreenUnicorn:
     $ cd <<carpeta-proyecto>>
     $ pip install -r requirements.txt
     # Sin logs ni reload
-    $ gunicorn app:app -w 6 -b 0.0.0.0:3000
+    $ gunicorn app:APP -w 6 -b 0.0.0.0:3000
     # Con logs y reload
-    $ gunicorn app:app -w 6 -b 0.0.0.0:3000 --reload --access-logfile -
+    $ gunicorn app:APP -w 6 -b 0.0.0.0:3000 --reload --access-logfile -
 
 ### PyLint
 
     $ pylint <archivo>.py --reports=yes
     $ pylint **/*.py --reports=yes
+
+### OAuth Responses
+
+https://www.googleapis.com/oauth2/v1/userinfo
+
+```
+{
+    "id": "7891273891273891273",
+    "email": "xyz@gmail.com",
+    "verified_email": true,
+    "name": "alkdjfa asdlfkjasdklf",
+    "given_name": "alkdjfa",
+    "family_name": "asdlfkjasdklf",
+    "picture": "https://lh3.googleusercontent.com/a-/AOh14GhaGAqhpkQfOw3DRemDILu_0aq2eTvfZdkGmRVe",
+    "locale": "es"
+}
+```
 
 ### Migraciones
 

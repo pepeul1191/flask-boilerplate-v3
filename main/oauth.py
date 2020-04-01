@@ -1,17 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import requests
-import json
-from flask import Blueprint, request
+import requests, json
+from flask import Blueprint, request, session, redirect
 from main.constants import OAUTH, CONSTANTS
 
 view = Blueprint('oauth_view', __name__)
 
 
-@view.route('/oauth/callback', methods=['GET'])
-def callback():
-    code = request.args.get('code')
+def google(req):
+    code = req.args.get('code')
     # get oauth google token
     r_oauth = requests.post(
         'https://oauth2.googleapis.com/token',
@@ -31,8 +29,20 @@ def callback():
             'access_token': oauth['access_token'],
         }
     )
-    # user = json.loads(r_user.text)
-    print(r_user.text)
+    return json.loads(r_user.text)
+
+@view.route('/oauth/callback', methods=['GET'])
+def callback():
+    origin = request.args.get('origin')
+    user_data = None
+    if origin == 'google':
+        user_data = google(request)
+        if user_data['locale'] == 'es':
+            session['lang'] = 'sp'
+        else:
+            session['lang'] = user_data['locale']
+        session['email'] = user_data['email']
+        session['name'] = user_data['name']
+        session['picture'] = user_data['picture']
     # locals_dic = { }
-    # return render_template('demo/index.html', locals=locals_dic)
-    return 'Recurso no encontrado', 200
+    return redirect('/demo')
